@@ -1,4 +1,4 @@
-package ca.paruvendu.resource;
+package ca.paruvendu.controllers;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -30,9 +30,9 @@ import ca.paruvendu.utility.MailConstructor;
 
 @RestController
 @RequestMapping("/user")
-public class UserResource {
+public class UserController {
 
-	private static Logger logger = LoggerFactory.getLogger(UserResource.class);
+	private static Logger logger = LoggerFactory.getLogger(UserController.class);
 	@Autowired
 	private UserService userService;
 

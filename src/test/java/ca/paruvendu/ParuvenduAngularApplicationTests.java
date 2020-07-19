@@ -8,18 +8,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-//import ca.paruvendu.resource.BookResource;
+import ca.paruvendu.controllers.CaradController;
 
-//@RunWith(SpringRunner.class)
-//@SpringBootTest
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class ParuvenduAngularApplicationTests {
 
-//	@Autowired
-//	private BookResource controller;
+	@Autowired
+	private CaradController controller;
 	
-//    @Test
-//    public void contexLoads() throws Exception {
-//        assertThat(controller).isNotNull();
-//    }
+    @Test
+    public void contexLoads() throws Exception {
+        assertThat(controller).isNotNull();
+    }
 
 }

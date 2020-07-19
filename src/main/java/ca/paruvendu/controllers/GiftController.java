@@ -1,4 +1,4 @@
-package ca.paruvendu.resource;
+package ca.paruvendu.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;

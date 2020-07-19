@@ -1,4 +1,4 @@
-package ca.paruvendu.resource;
+package ca.paruvendu.controllers;
 
 import java.util.Collections;
 import java.util.Map;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ca.paruvendu.service.UserService;
 
 @RestController
-public class LoginResouce {
+public class LoginController {
 
 	@Autowired
 	private UserService userService;

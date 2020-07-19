@@ -39,7 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	private static final String[] PUBLIC_MATCHERS = {
 
-			"/css/**", "/js/**", "/image/**", "/paruvendu/**", "/user/**", "/carad/**","/appad/**","/checkSession" };
+			"/css/**", "/js/**", "/image/**", "/paruvendu/**", "/user/**", "/carad/**","/appad/**" };
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -59,13 +59,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 	}
 	
-//	@Bean
-//	  CorsConfigurationSource corsConfigurationSource() {
-//	      CorsConfiguration configuration = new CorsConfiguration();
-//	      configuration.setAllowedOrigins(Arrays.asList("http://192.168.1.101"));
-//	      configuration.setAllowedMethods(Arrays.asList("GET","POST"));
-//	      UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//	      source.registerCorsConfiguration("/**", configuration);
-//	      return source;
-//	  }
 }

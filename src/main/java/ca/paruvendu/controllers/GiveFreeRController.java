@@ -1,4 +1,4 @@
-package ca.paruvendu.resource;
+package ca.paruvendu.controllers;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -37,10 +37,10 @@ import ca.paruvendu.service.IGiveFreeService;
 
 @RestController
 @RequestMapping("givefree")
-public class GiveFreeResource {
+public class GiveFreeRController {
 	
 	
-	private static final Logger logger = LoggerFactory.getLogger(GiveFreeResource.class);
+	private static final Logger logger = LoggerFactory.getLogger(GiveFreeRController.class);
 	
 	@Autowired
 	IGiveFreeService giveFreeservcie;
