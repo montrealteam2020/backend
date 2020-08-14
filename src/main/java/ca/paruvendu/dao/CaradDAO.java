@@ -109,6 +109,14 @@ public class CaradDAO implements ICaradDAO {
 	 	
 		logger.info(query.toString());
 		 return (List<Carad>) query.getResultList();
-	}
+	 }
+
+		@Override
+		public List<Carad> findAll(String username) {
+			Query query = this.entityManager.createQuery("From Carad c where c.postedBy=:postedBy");
+			query.setParameter("postedBy", username);
+			return query.getResultList();
+		}
+	
 
 }

@@ -39,8 +39,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import ca.paruvendu.domain.Appad;
 import ca.paruvendu.domain.Carad;
 import ca.paruvendu.domain.Search;
+import ca.paruvendu.domain.User;
+import ca.paruvendu.service.UserService;
 import ca.paruvendu.service.impl.AppadService;
-
+import java.security.Principal;
 
 @RestController
 @RequestMapping("/appad")
@@ -50,13 +52,17 @@ public class AppadController {
 
 	@Autowired
 	private AppadService appadService;
+	
+	@Autowired
+	private UserService userService;
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public Appad addAppad(@RequestBody Appad appad) {
-
-		Date addate = new Date();
+	public Appad addAppad(@RequestBody Appad appad,  Principal principal) {
+        User user = userService.findByUserName(principal.getName());
+		     
+        Date addate = new Date();
 		appad.setAddate(addate);
-		
+		appad.setPostedBy(user.getUsername());
 		return appadService.save(appad);
 
 	}

@@ -12,5 +12,6 @@ public interface ICaradDAO {
 	public List<Carad> findAll();
 	public Carad findById(String id);
 	public List<Carad> findByKeyword(Search search);
+	public List<Carad> findAll(String username);
 
 }

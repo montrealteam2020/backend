@@ -40,6 +40,7 @@ public class Appad  implements Serializable{
 	private String areacode;
 	private Date addate;
 	private String phone;
+	private String postedBy;
 	transient private int fileNumber;	
 	
 	
@@ -164,8 +165,12 @@ public class Appad  implements Serializable{
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	public String getPostedBy() {
+		return postedBy;
+	}
+	public void setPostedBy(String postedBy) {
+		this.postedBy = postedBy;
+	}
 	
 	
-	
-
 }

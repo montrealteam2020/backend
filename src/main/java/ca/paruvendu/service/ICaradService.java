@@ -9,5 +9,7 @@ public interface ICaradService {
 	public	Carad save(Carad carad);
 	public List<Carad> findAll();
 	public Carad findById(String id);
+	public List<Carad> findAllAds(String username);
+	public void delete(String id);
 	
 }

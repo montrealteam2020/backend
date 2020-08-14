@@ -135,5 +135,7 @@ public class UserController {
 		mailSender.send(newEmail);
 		return new ResponseEntity("Message sent", HttpStatus.OK);
 	}
+	
+
 
 }

@@ -15,6 +15,7 @@ import ca.paruvendu.dao.IUserDAO;
 import ca.paruvendu.dao.IUserRoleDAO;
 import ca.paruvendu.domain.User;
 import ca.paruvendu.domain.security.UserRole;
+import ca.paruvendu.repository.RoleRepository;
 import ca.paruvendu.service.UserService;
 
 @Service
@@ -27,9 +28,9 @@ public class UserServiceImpl implements UserService {
 	private IUserDAO usreDAO;
 	
 	@Autowired
-	private IUserRoleDAO roleRepository;
+	private RoleRepository roleRepository;
 	
-//	@Transactional
+	@Transactional
 	public User createUser(User user, Set<UserRole> userRole) {
 		User localUser = usreDAO.findByUserName (user.getUsername());
 		

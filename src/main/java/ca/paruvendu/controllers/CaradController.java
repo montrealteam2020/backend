@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.PosixFilePermission;
 import java.nio.file.attribute.PosixFilePermissions;
+import java.security.Principal;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -39,6 +40,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import ca.paruvendu.domain.Carad;
 import ca.paruvendu.domain.Search;
+import ca.paruvendu.domain.User;
+import ca.paruvendu.service.UserService;
 import ca.paruvendu.service.impl.CaradService;
 
 
@@ -52,20 +55,23 @@ public class CaradController {
 	@Autowired
 	private CaradService caradService;
 	
-	
+	@Autowired
+	private UserService userService;
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	@CrossOrigin(origins="http://http://18.188.26.113/")
-	public Carad addCarad(@RequestBody Carad carad) {
+//	@CrossOrigin(origins="http://http://18.188.26.113/")
+	public Carad addCarad(@RequestBody Carad carad,  Principal principal) {
+		User user = userService.findByUserName(principal.getName());
 		Date addate = new Date();
 		carad.setAddate(addate);
+		carad.setPostedBy(user.getUsername());
 		return caradService.save(carad);
 
 	}
 
   
 	@RequestMapping(value = "/add/image", method = RequestMethod.POST)
-	@CrossOrigin(origins="http://13.58.52.66")
+//	@CrossOrigin(origins="http://13.58.52.66")
 	public ResponseEntity upload(@RequestParam("id") String id, HttpServletResponse response,
 			HttpServletRequest request) {
 		try {
@@ -116,7 +122,6 @@ public class CaradController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
 			
 		  }
 	  
